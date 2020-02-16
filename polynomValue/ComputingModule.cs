@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace polynomValue
 {
-    class ComputingModule
+    public class ComputingModule
     {
         /// <summary>
         ///     Функция вычисляет занчение полинома используя схему горнера 
