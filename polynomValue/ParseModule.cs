@@ -5,7 +5,7 @@ using System.Collections;
 
 namespace polynomValue
 {
-    class ParseModule
+    public class ParseModule
     {
         /// <summary>
         /// Совершает полное преобразование полинома в виде строки в список с коэфиентами расположеными по убыванию степени

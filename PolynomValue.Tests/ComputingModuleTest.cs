@@ -27,14 +27,7 @@ namespace PolynomValue.Tests
 
             foreach (var testCase in testRatiosData1)
             {
-                try
-                {
                     Assert.AreEqual(testCase.Key, polynomValue.ComputingModule.calculatePolynom(testCase.Value, 2));
-                }
-                catch (Exception)
-                {
-                    continue;
-                }
             }
 
             // Структура словоря
