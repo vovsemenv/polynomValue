@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -64,6 +65,90 @@ namespace polynomValue
             
 
 
+        }
+       
+        private void px_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (pxButton != null)
+            {
+                if (string.IsNullOrEmpty(px.Text))
+                {
+                    pxButton.IsEnabled = false;
+                    complexbutton.IsEnabled = false;
+                }
+                else
+                {
+                    pxButton.IsEnabled = true;
+                    complexbutton.IsEnabled = true;
+                }
+            }
+            
+
+        }
+        private void qy_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (qyButton != null)
+            {
+                if (string.IsNullOrEmpty(qy.Text))
+                {
+                    qyButton.IsEnabled = false;
+                    complexbutton.IsEnabled = false;
+                }
+                else
+                {
+                    qyButton.IsEnabled = true;
+                    complexbutton.IsEnabled = true;
+                }
+            }
+
+
+        }
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9-+]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void NumberanXValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9x+-]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+
+        private void x_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (pxButton != null)
+            {
+                if (string.IsNullOrEmpty(x.Text))
+                {
+                    pxButton.IsEnabled = false;
+                    complexbutton.IsEnabled = false;
+                }
+                else
+                {
+                    pxButton.IsEnabled = true;
+                    complexbutton.IsEnabled = true;
+                }
+                
+            }
+        }
+
+        private void y_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (pxButton != null&&qyButton!=null)
+            {
+                if (string.IsNullOrEmpty(y.Text))
+                {
+                    qyButton.IsEnabled = false;
+                    complexbutton.IsEnabled = false;
+                }
+                else
+                {
+                    qyButton.IsEnabled = true;
+                    complexbutton.IsEnabled = true;
+                }
+            }
         }
     }
 }

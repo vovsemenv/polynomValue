@@ -89,6 +89,8 @@ namespace polynomValue
         /// <returns>Возвращает тюпл содеражащий степень и коэфицент из операнда  Пример тюпл вида (3 , 2)</returns>
         public static (int, int) parseOperand(string operand)
         {
+
+
             int pow = 0;
             int coef = 0;
 
