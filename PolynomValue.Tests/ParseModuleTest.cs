@@ -36,7 +36,7 @@ namespace PolynomValue.Tests
                 ["2x2+3x+5"] = new List<string>() { "+2x2", "+3x", "+5" },
                 ["-2x2+3x+5"] = new List<string>() { "+-2x2", "+3x", "+5" },
                 ["-12x2+3x+5"] = new List<string>() { "+-12x2", "+3x", "+5" },
-                ["-12x3+3x2+5x+7"] = new List<string>() { "+-12x3", "+3x2", "+5x", "+7" },
+                ["-12x3+3x2+5x+7"] = new List<string>() { "+-12x3", "+3x2", "+5x", "+7" }
             };
 
             foreach (var testCase in testPolynoms)
@@ -44,6 +44,29 @@ namespace PolynomValue.Tests
                 Assert.AreEqual(
                     string.Join("", testCase.Value.ToArray()), 
                     string.Join("", ParseModule.operandsFromString(testCase.Key).ToArray())
+                );
+            }
+        }
+    
+        [TestMethod]
+        public void ParseAll()
+        {
+            var testPolynoms = new Dictionary<string, List<int>>()
+            {
+                ["5"] = new List<int>() { 5 },// +
+               // ["-5"] = new List<int>() { -5 },
+               // ["x+5"] = new List<int>() { 1, 5 },
+                ["2x2+3x+5"] = new List<int>() { 2, 3, 5 },// +
+               // ["-2x2+3x+5"] = new List<int>() { -2, 3, 5 },
+               // ["-12x2+3x+5"] = new List<int>() { -12, 3, 5 },
+               // ["-12x3+3x2+5x+7"] = new List<int>() { -12, 3, 5, 7 }
+            };
+
+            foreach (var testCase in testPolynoms)
+            {
+                Assert.AreEqual(
+                    string.Join("", testCase.Value.Select(x=>x.ToString()).ToArray()),
+                    string.Join("", ParseModule.parseAll(testCase.Key).Select(x => x.ToString()).ToArray())
                 );
             }
         }
