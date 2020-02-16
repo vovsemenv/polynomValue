@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:polynomValue"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="500">
+        Title="MainWindow" Width="500" d:DesignHeight="940.019" Height="Auto" MinWidth="500" MinHeight="500">
     <ScrollViewer HorizontalScrollBarVisibility="Visible">
-        <Grid>
-            <TextBlock FontSize="20" TextAlignment="Center"  Margin="0,10,0,349" ><Run Text="Введите полином "/><Run Text="P(x) "/><Run Text="в формате "/><Run/><LineBreak/><Run Text="P(x) = 2x2+3x+5 "/></TextBlock>
+        <Grid Height="Auto">
+            <TextBlock FontSize="20" TextAlignment="Center"  Margin="0,10,0,909" ><Run Text="Введите полином "/><Run Text="P(x) "/><Run Text="в формате "/><Run/><LineBreak/><Run Text="P(x) = 2x2+3x+5 "/></TextBlock>
             <TextBox PreviewTextInput="NumberanXValidationTextBox" TextChanged="px_TextChanged" x:Name="px" Height="49"  TextWrapping="Wrap" FontSize="30" Text="2x2+3x+5" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="327" Margin="0,80,0,0"/>
-            <TextBlock FontSize="20" TextAlignment="Center"  Margin="0,145,0,244" ><Run Text="В"/><Run Text="в"/><Run Text="едите "/><Run Text="значение х для вычи"/><Run Text="сления"/></TextBlock>
+            <TextBlock FontSize="20" TextAlignment="Center"  Margin="0,145,0,800" ><Run Text="В"/><Run Text="в"/><Run Text="едите "/><Run Text="значение х для вычи"/><Run Text="сления"/></TextBlock>
             <TextBox PreviewTextInput="NumberValidationTextBox" TextChanged="x_TextChanged" x:Name="x" Height="49"  TextWrapping="Wrap" FontSize="30" Text="2" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="317" Margin="0,177,-3,0"/>
             <Button Name="pxButton" FontSize="30" Content="Высчислить P(x)" VerticalAlignment="Top" Margin="0,249,3,0" HorizontalAlignment="Center" Width="236" Click="polyByX"/>
-            <TextBlock FontSize="20" TextAlignment="Center"  Margin="0,340,0,19" ><Run Text="Введите полином Q(x) "/><Run Text="в формате "/><Run/><LineBreak/><Run Text="Q(x) = 2x2+3x+5"/></TextBlock>
+            <TextBlock FontSize="20" TextAlignment="Center"  Margin="14,347,-14,579" ><Run Text="Введите полином Q(x) "/><Run Text="в формате "/><Run/><LineBreak/><Run Text="Q(x) = 2x2+3x+5"/></TextBlock>
             <TextBox TextChanged="qy_TextChanged" x:Name="qy" Height="49"  TextWrapping="Wrap" FontSize="30" Text="2x2+3x+5" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="317" Margin="0,405,-3,0"/>
-            <TextBlock FontSize="20" TextAlignment="Center"  Margin="0,475,0,-86" ><Run Text="В"/><Run Text="в"/><Run Text="едите "/><Run Text="значение y для вычи"/><Run Text="сления"/></TextBlock>
+            <TextBlock FontSize="20" TextAlignment="Center"  Margin="0,475,0,469" ><Run Text="В"/><Run Text="в"/><Run Text="едите "/><Run Text="значение y для вычи"/><Run Text="сления"/></TextBlock>
             <TextBox PreviewTextInput="NumberValidationTextBox" TextChanged="y_TextChanged" x:Name="y" Height="49"  TextWrapping="Wrap" FontSize="30" Text="2" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="317" Margin="0,510,0,0"/>
             <Button Name="qyButton" FontSize="30" Content="Высчислить Q(y)" HorizontalAlignment="Center" VerticalAlignment="Top" Width="236" Margin="0,581,-7,0" Click="polyByY"/>
             <Button Name="complexbutton" FontSize="30" Content="Высчислить P(x)*Q(y)-P(Q(x+y))" HorizontalAlignment="Center" VerticalAlignment="Top" Width="447" Margin="0,678,0,0" Click="polySumByXY"/>

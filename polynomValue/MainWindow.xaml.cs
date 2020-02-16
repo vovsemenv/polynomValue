@@ -57,7 +57,7 @@ namespace polynomValue
 
             var qByXPlusY  = ComputingModule.calculatePolynom(s1, int.Parse(y.Text)+int.Parse(x.Text));
 
-            var pByQtop = ComputingModule.calculatePolynom(s, qByXPlusY);
+            var pByQtop = ComputingModule.calculatePolynom(s, int.Parse(qByXPlusY.ToString()));
 
             var sum = px * yx - pByQtop ;
 

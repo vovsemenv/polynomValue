@@ -15,10 +15,10 @@ namespace polynomValue
         /// <param name="ratios"> Принимает список коэфицентов начиная с наибольшей степени</param>
         /// <param name="coef">Принимает х для которго нужно вычислить значение</param>
         /// <returns>Возвращает вычисленное значение полинома</returns>
-        public static int calculatePolynom(List<int> ratiosData, int coef)
+        public static double calculatePolynom(List<int> ratiosData, int coef)
         {
             var ratios = new List<int>(ratiosData);
-            int res = ratios[0];
+            double res = ratios[0];
             ratios.RemoveAt(0);
             foreach (var ratio in ratios)
             {

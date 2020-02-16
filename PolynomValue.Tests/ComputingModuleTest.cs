@@ -23,6 +23,7 @@ namespace PolynomValue.Tests
                    [3099999969] = new List<int>() { 99999999, 99999999, 99999999, 99999999, 99999999 },
                    [-11] = new List<int>() { -1, -2, -3},
                    [2] = new List<int>() { 1, -2, 3, -4}
+                   
             };
 
             foreach (var testCase in testRatiosData1)

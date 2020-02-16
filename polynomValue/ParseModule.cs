@@ -55,7 +55,7 @@ namespace polynomValue
         /// <returns>Возвращаяет список операндов вида [ "+2x+2","2x","5"] </returns>
         public static List<string> operandsFromString(string str)
         {
-            if (str[0] != '+' || str[0] != '-')
+            if (str[0] != '+' && str[0] != '-')
             {
                 str = '+' + str;
             }
@@ -95,8 +95,22 @@ namespace polynomValue
             int coef = 0;
 
             var newlist = operand.Split('x');
-
-            coef = int.Parse(newlist[0]);
+            if(newlist[0]!="+"&& newlist[0] != "-")
+            {
+                coef = int.Parse(newlist[0]);
+            }
+            else
+            {
+                if(newlist[0] == "+")
+                {
+                    coef = 1;
+                }
+                if (newlist[0] == "-")
+                {
+                    coef = -1;
+                }
+            }
+            
             if (newlist.Length == 2)
             {
                 if (newlist[1] != "")
