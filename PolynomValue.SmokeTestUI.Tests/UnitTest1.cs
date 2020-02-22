@@ -38,5 +38,26 @@ namespace PolynomValue.SmokeTestUI.Tests
 
             Assert.AreEqual(expected, window.res);
         }
+
+        [DataTestMethod]
+        [Description("Проверка корректной работы UI для вычисление значения первого полинома Q(y)")]
+        [DataRow("1", 2, 1)]
+        [DataRow("1", 999, 1)]
+        [DataRow("1", -999, 1)]
+        [DataRow("-1", -999, -1)]
+        [DataRow("x+5", -2, 3)]
+        [DataRow("x-5", -2, -7)]
+        [DataRow("x2+x-5", -2, -3)]
+        [DataRow("999x2-999x-999", -2, 4995)]
+        public void CalcPolynomSecondTest(string exp, int operand, double expected)
+        {
+            MainWindow window = new MainWindow();
+
+            window.setQy(exp);
+            window.setY(operand);
+            window.clickQy();
+
+            Assert.AreEqual(expected, window.res);
+        }
     }
 }
