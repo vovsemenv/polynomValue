@@ -102,6 +102,8 @@ namespace PolynomValue.SmokeTestUI.Tests
         [DataRow("$", "", 2, 2, 404)]
         [DataRow("#", "", 2, 2, 404)]
         [DataRow("!", "", 2, 2, 404)]
+        [DataRow("1", "", 2, 2, 404)]
+        [DataRow("", "1", 2, 2, 404)]
         [DataRow("1", "1", 2, 2, 0)]
         [DataRow("x+1", "1", 2, 2, 1)]
         [DataRow("x2+x+1", "1", 2, 2, 4)]
