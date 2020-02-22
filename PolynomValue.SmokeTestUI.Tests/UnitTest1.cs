@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
 using polynomValue;
 
 namespace PolynomValue.SmokeTestUI.Tests
@@ -9,22 +8,35 @@ namespace PolynomValue.SmokeTestUI.Tests
     public class UnitTest1
     {
         [TestMethod]
+        [Description("Попытка открыть и закрыть приложение")]
         public void TryOpentWindow()
         {
             MainWindow window = new MainWindow();
-            window.InitializeComponent();
             window.Show();
             NUnit.Framework.Assert.IsTrue(window.IsVisible);
             window.Close();
             NUnit.Framework.Assert.IsFalse(window.IsVisible);
         }
 
-        [TestMethod]
-        [TestCase("1", "2")]
-        public void CalcPolynomFirstTest(string exp, string arg)
+        [DataTestMethod]
+        [Description("Проверка корректной работы UI для вычисление значения первого полинома P(x)")]
+        [DataRow("1", 2, 1)]
+        [DataRow("1", 999, 1)]
+        [DataRow("1", -999, 1)]
+        [DataRow("-1", -999, -1)]
+        [DataRow("x+5", -2, 3)]
+        [DataRow("x-5", -2, -7)]
+        [DataRow("x2+x-5", -2, -3)]
+        [DataRow("999x2-999x-999", -2, 4995)]
+        public void CalcPolynomFirstTest(string exp, int operand, double expected)
         {
             MainWindow window = new MainWindow();
-            window.InitializeComponent();
+
+            window.setPx(exp);
+            window.setX(operand);
+            window.clickPx();
+
+            Assert.AreEqual(expected, window.res);
         }
     }
 }
