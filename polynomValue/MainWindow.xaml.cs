@@ -74,7 +74,6 @@ namespace polynomValue
             Thread t = new Thread(() => MessageBox.Show(sum.ToString(), "My App"));
             t.Start();
             this.res = sum;
-            
         }
        
         private void px_TextChanged(object sender, TextChangedEventArgs e)
