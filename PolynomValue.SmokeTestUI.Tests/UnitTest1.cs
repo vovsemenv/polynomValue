@@ -20,6 +20,15 @@ namespace PolynomValue.SmokeTestUI.Tests
 
         [DataTestMethod]
         [Description("Проверка корректной работы UI для вычисление значения первого полинома P(x)")]
+        [DataRow("", 2, 404)]
+        [DataRow(" ", 2, 404)]
+        [DataRow(".", 2, 404)]
+        [DataRow("/", 2, 404)]
+        [DataRow("?", 2, 404)]
+        [DataRow("$", 2, 404)]
+        [DataRow("#", 2, 404)]
+        [DataRow("!", 2, 404)]
+        [DataRow("arq1ccfashfhas", 2, 404)]
         [DataRow("1", 2, 1)]
         [DataRow("1", 999, 1)]
         [DataRow("1", -999, 1)]
@@ -36,11 +45,27 @@ namespace PolynomValue.SmokeTestUI.Tests
             window.setX(operand);
             window.clickPx();
 
-            Assert.AreEqual(expected, window.res);
+            if(expected == 404)
+            {
+                Assert.AreNotEqual(expected, window.res);
+            }
+            else
+            {
+                Assert.AreEqual(expected, window.res);
+            }
         }
 
         [DataTestMethod]
         [Description("Проверка корректной работы UI для вычисление значения первого полинома Q(y)")]
+        [DataRow("", 2, 404)]
+        [DataRow(" ", 2, 404)]
+        [DataRow(".", 2, 404)]
+        [DataRow("/", 2, 404)]
+        [DataRow("?", 2, 404)]
+        [DataRow("$", 2, 404)]
+        [DataRow("#", 2, 404)]
+        [DataRow("!", 2, 404)]
+        [DataRow("arq1ccfashfhas", 2, 404)]
         [DataRow("1", 2, 1)]
         [DataRow("1", 999, 1)]
         [DataRow("1", -999, 1)]
@@ -57,7 +82,14 @@ namespace PolynomValue.SmokeTestUI.Tests
             window.setY(operand);
             window.clickQy();
 
-            Assert.AreEqual(expected, window.res);
+            if (expected == 404)
+            {
+                Assert.AreNotEqual(expected, window.res);
+            }
+            else
+            {
+                Assert.AreEqual(expected, window.res);
+            }
         }
     }
 }
