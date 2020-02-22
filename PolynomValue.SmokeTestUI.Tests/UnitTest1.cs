@@ -13,9 +13,85 @@ namespace PolynomValue.SmokeTestUI.Tests
         {
             MainWindow window = new MainWindow();
             window.Show();
-            NUnit.Framework.Assert.IsTrue(window.IsVisible);
+            Assert.IsTrue(window.IsVisible);
             window.Close();
-            NUnit.Framework.Assert.IsFalse(window.IsVisible);
+            Assert.IsFalse(window.IsVisible);
+        }
+
+        [TestMethod]
+        [Description("Попытка записать значение аргуместа Y")]
+        [DataRow(1, 1)]
+        [DataRow(2, 2)]
+        [DataRow(2222, 2222)]
+        [DataRow(-1, -1)]
+        [DataRow(-2, -2)]
+        [DataRow(-2222, -2222)]
+        public void SetSecondOperand(int operand, int expected)
+        {
+            MainWindow window = new MainWindow();
+            window.Show();
+
+            window.setY(operand);
+            Assert.AreEqual(expected, window.getY());
+
+            window.Close();
+        }
+
+        [TestMethod]
+        [Description("Попытка записать значение аргуместа X")]
+        [DataRow(1, 1)]
+        [DataRow(2, 2)]
+        [DataRow(2222, 2222)]
+        [DataRow(-1, -1)]
+        [DataRow(-2, -2)]
+        [DataRow(-2222, -2222)]
+        public void SetFirstOperand(int operand, int expected)
+        {
+            MainWindow window = new MainWindow();
+            window.Show();
+
+            window.setX(operand);
+            Assert.AreEqual(expected, window.getX());
+
+            window.Close();
+        }
+
+        [TestMethod]
+        [Description("Попытка записать выражение для P(x)")]
+        [DataRow("", "")]
+        [DataRow("1", "1")]
+        [DataRow("x", "x")]
+        [DataRow("-x", "-x")]
+        [DataRow("x2-x", "x2-x")]
+        [DataRow("x2", "x2")]
+        public void SetFirstExp(string exp, string expected)
+        {
+            MainWindow window = new MainWindow();
+            window.Show();
+
+            window.setPx(exp);
+            Assert.AreEqual(expected, window.getPx());
+
+            window.Close();
+        }
+
+        [TestMethod]
+        [Description("Попытка записать выражение для Q(y)")]
+        [DataRow("", "")]
+        [DataRow("1", "1")]
+        [DataRow("x", "x")]
+        [DataRow("-x", "-x")]
+        [DataRow("x2-x", "x2-x")]
+        [DataRow("x2", "x2")]
+        public void SetSecondExp(string exp, string expected)
+        {
+            MainWindow window = new MainWindow();
+            window.Show();
+
+            window.setQy(exp);
+            Assert.AreEqual(expected, window.getQy());
+
+            window.Close();
         }
 
         [DataTestMethod]
