@@ -12,6 +12,7 @@ namespace PolynomValue.Tests
         [TestMethod]
         public void ParceOperand()
         {
+
             Assert.AreEqual((3, 2), polynomValue.ParseModule.parseOperand("+2x3"));
             Assert.AreEqual((3, -2), polynomValue.ParseModule.parseOperand("-2x3"));
 

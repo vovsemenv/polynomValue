@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="PlynomValue" ResizeMode="NoResize" Width="497" d:DesignHeight="629"
         >
-    <ScrollViewer HorizontalScrollBarVisibility="Visible">
+    <ScrollViewer HorizontalScrollBarVisibility="Visible" Margin="0,0,4,0">
         <Grid Height="Auto">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10">
                 <StackPanel.Resources>
